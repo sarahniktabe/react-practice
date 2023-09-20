@@ -13,11 +13,11 @@ const AddUsers = (props) => {
     if (enteredData.length === 0 || +enteredData.length < 1) {
       return;
     }
+    props.onAddUser(enteredData.userName, enteredData.age);
     setEnteredData({
       userName: "",
       age: "",
     });
-    console.log(enteredData);
   };
 
   const changeHandler = (event) => {
