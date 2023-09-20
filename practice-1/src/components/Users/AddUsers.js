@@ -12,7 +12,7 @@ const AddUsers = (props) => {
   const [error, setError] = useState();
   const addUserHandler = (event) => {
     event.preventDefault();
-    if (enteredData.length === 0 || +enteredData.length < 1) {
+    if (enteredData.userName.length === 0 && +enteredData.age.length < 1) {
       setError({
         title: "invalid input.",
         message: "enter your name and your family.",
@@ -24,6 +24,7 @@ const AddUsers = (props) => {
       userName: "",
       age: "",
     });
+    console.log(error);
   };
 
   const errorHandler = () => {
