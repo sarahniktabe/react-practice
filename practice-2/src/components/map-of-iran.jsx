@@ -60,7 +60,26 @@ function MapOfIran() {
       rightLg: "lg:right-[316px]",
     },
   ];
-  return <></>;
-}
+  return (
+    
+    <div className="flex flex-col">
+        <div className="flex items-center lg:justify-start">
+          <p className="lg:text-4xl text-2xl font-bold text-primary-10">
+            به سراسر <span className="text-[#E89B00]">ایران</span> بفروش
+          </p>
+        </div>
+        <div className="flex relative w-[350px] lg:w-[700px] mx-auto">
+          <img
+            src="/assets/images/homepage/map-of-iran/iran.svg"
+            width={350}
+            height={0}
+            alt="mapofiran"
+            className="mt-[32px] lg:w-[700px]"
+          />
+          </div>
+    
+     
+  );
+};
 
 export default MapOfIran;
