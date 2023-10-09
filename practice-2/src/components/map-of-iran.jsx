@@ -1,11 +1,14 @@
-import React from "react";
+import { mapIranProps } from "./map-iran.iterface";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { OrganizationJsonLd, SiteLinksSearchBoxJsonLd } from "next-seo";
 
-function MapOfIran() {
-  const buyersList = [
+const MapOfIranSection: React.FC = () => {
+  const buyersList: mapIranProps[] = [
     {
       id: 1,
       image: "ahvaz.webp",
-      name: "روزبه",
+      name: "نیما",
       city: "اهواز",
       whatBuy: "ساعت",
       top: "top-[180px]",
@@ -16,7 +19,7 @@ function MapOfIran() {
     {
       id: 2,
       image: "zan2.webp",
-      name: "لیلی",
+      name: "مهسا",
       city: "چالدران",
       whatBuy: "مانتو",
       top: "top-[10px]",
@@ -29,7 +32,7 @@ function MapOfIran() {
     {
       id: 3,
       image: "zan1.webp",
-      name: "سارا",
+      name: "ریحانه",
       city: "کاشمر",
       whatBuy: "لوازم خانگی",
       top: "top-[90px]",
@@ -40,7 +43,7 @@ function MapOfIran() {
     {
       id: 4,
       image: "kerman.webp",
-      name: "علی",
+      name: "بهروز",
       city: "کرمان",
       whatBuy: "کفش چرم",
       top: "top-[205px]",
@@ -51,7 +54,7 @@ function MapOfIran() {
     {
       id: 5,
       image: "tehran.webp",
-      name: "هادی",
+      name: "حسین",
       city: "تهران",
       whatBuy: "ادکلن",
       top: "top-[85px]",
@@ -60,26 +63,105 @@ function MapOfIran() {
       rightLg: "lg:right-[316px]",
     },
   ];
+
   return (
-    
-    <div className="flex flex-col">
+    <>
+      <OrganizationJsonLd
+        name="بازار نخل"
+        type="Organization"
+        url="http://nakhll.com"
+        logo="https://nakhll.com//assets/images/logo/logo-base.svg"
+        contactPoint={[
+          {
+            type: "ContactPoint",
+            telephone: "03491001230",
+            contactType: "customer service",
+            areaServed: "IR",
+            availableLanguage: ["Persian"],
+          },
+        ]}
+        sameAs={[
+          "https://www.instagram.com/nakhll_com/",
+          "https://twitter.com/Nakhll",
+        ]}
+      />
+      <SiteLinksSearchBoxJsonLd
+        url="https://nakhll.com/"
+        potentialActions={[
+          {
+            target: "https://nakhll.com/search?keyword=",
+            queryInput: "search_term_string",
+          },
+        ]}
+        type="WebSite"
+      />
+      <div className="flex flex-col">
         <div className="flex items-center lg:justify-start">
           <p className="lg:text-4xl text-2xl font-bold text-primary-10">
             به سراسر <span className="text-[#E89B00]">ایران</span> بفروش
           </p>
         </div>
         <div className="flex relative w-[350px] lg:w-[700px] mx-auto">
-          <img
+          <Image
             src="/assets/images/homepage/map-of-iran/iran.svg"
             width={350}
             height={0}
             alt="mapofiran"
             className="mt-[32px] lg:w-[700px]"
           />
-          </div>
-    
-     
+          {buyersList.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className={`${"buyer-on-map-" + item.id} absolute ${item.top} ${
+                  item.topLg
+                }
+                                     ${item.right ? item.right : ""}
+                                     ${item.rightLg ? item.rightLg : ""}
+                                     ${item.left ? item.left : ""}
+                                     ${item.leftLg ? item.leftLg : ""}
+                                     ${item.translateX ? item.translateX : ""}
+                                     ${
+                                       item.translateXLg
+                                         ? item.translateXLg
+                                         : ""
+                                     }`}
+              >
+                <div className="relative w-[120px] h-[95px] lg:w-[240px] lg:h-[176px]">
+                  <div className="absolute top-0 right-0 z-50">
+                    <img
+                      src={`/assets/images/homepage/map-of-iran/map-of-iran-buyers/${item.image}`}
+                      className="rounded-full border-2 lg:border-4 border-[#e89d00] lg:w-[110px] lg:h-[110px]"
+                      width={55}
+                      height={55}
+                      alt="mapofiran"
+                    />
+                  </div>
+                  <div className="absolute top-[9px] lg:top-[18px] left-[48px] lg:left-[96px] -translate-x-[50%]">
+                    <Image
+                      src="/assets/images/homepage/map-of-iran/location-sign.svg"
+                      width={35}
+                      height={35}
+                      className="lg:w-[70px] lg:h-[70px]"
+                      alt="mapofiran"
+                    />
+                  </div>
+                  <div className="absolute bg-gray border-2 lg:border-4 border-[#e89d00] rounded-[8px] lg:rounded-2xl p-1 lg:p-4 bottom-0 left-0 text-center w-[130px] lg:w-[192px]">
+                    <p className="font-bold text-[12px] lg:text-[16px]">
+                      {item.name} هستم از {item.city}
+                    </p>
+                    <p className="font-bold text-[12px] lg:text-[16px]">
+                      خریدار {item.whatBuy}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
   );
 };
 
-export default MapOfIran;
+export default MapOfIranSection;
