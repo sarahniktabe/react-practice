@@ -1,10 +1,9 @@
 import { mapIranProps } from "./map-iran.iterface";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { OrganizationJsonLd, SiteLinksSearchBoxJsonLd } from "next-seo";
 
-const MapOfIranSection: React.FC = () => {
-  const buyersList: mapIranProps[] = [
+const MapOfIranSection = () => {
+  const buyersList = [
     {
       id: 1,
       image: "ahvaz.webp",
