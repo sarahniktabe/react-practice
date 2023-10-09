@@ -36,3 +36,155 @@
     transform: rotate(360deg);
   }
 }
+
+.buyer-on-map-1 {
+  animation: map-buyer-1 20s infinite;
+}
+.buyer-on-map-2 {
+  animation: map-buyer-2 20s infinite;
+}
+.buyer-on-map-3 {
+  animation: map-buyer-3 20s infinite;
+}
+.buyer-on-map-4 {
+  animation: map-buyer-4 20s infinite;
+}
+.buyer-on-map-5 {
+  animation: map-buyer-5 20s infinite;
+}
+@keyframes map-buyer-1 {
+  0% {
+    scale: 1;
+  }
+
+  18% {
+    scale: 1;
+  }
+  19% {
+    scale: 0;
+  }
+
+  99% {
+    scale: 0;
+  }
+}
+@keyframes map-buyer-2 {
+  0% {
+    scale: 0;
+  }
+  19% {
+    scale: 0;
+  }
+  20% {
+    scale: 1;
+  }
+  /* show time */
+  38% {
+    scale: 1;
+  }
+  39% {
+    scale: 0;
+  }
+  100% {
+    scale: 0;
+  }
+}
+@keyframes map-buyer-3 {
+  0% {
+    scale: 0;
+  }
+  19% {
+    scale: 0;
+  }
+  20% {
+    scale: 0;
+  }
+  39% {
+    scale: 0;
+  }
+  40% {
+    scale: 1;
+  }
+  /* show time */
+  58% {
+    scale: 1;
+  }
+  59% {
+    scale: 0;
+  }
+  100% {
+    scale: 0;
+  }
+}
+@keyframes map-buyer-4 {
+  0% {
+    scale: 0;
+  }
+  19% {
+    scale: 0;
+  }
+  20% {
+    scale: 0;
+  }
+  39% {
+    scale: 0;
+  }
+  40% {
+    scale: 0;
+  }
+  59% {
+    scale: 0;
+  }
+  60% {
+    scale: 1;
+  }
+  /* show time */
+  78% {
+    scale: 1;
+  }
+  79% {
+    scale: 0;
+  }
+  100% {
+    scale: 0;
+  }
+}
+@keyframes map-buyer-5 {
+  0% {
+    scale: 0;
+  }
+  19% {
+    scale: 0;
+  }
+  20% {
+    scale: 0;
+  }
+  39% {
+    scale: 0;
+  }
+  40% {
+    scale: 0;
+  }
+  59% {
+    scale: 0;
+  }
+  60% {
+    scale: 0;
+  }
+  79% {
+    scale: 0;
+  }
+  80% {
+    scale: 1;
+  }
+  /* show time */
+  98% {
+    scale: 1;
+  }
+  99% {
+    scale: 0;
+  }
+  100% {
+    scale: 0;
+  }
+}
