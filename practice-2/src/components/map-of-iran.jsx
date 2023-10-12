@@ -1,4 +1,3 @@
-import { mapIranProps } from "./map-iran.iterface";
 import Image from "next/image";
 import { OrganizationJsonLd, SiteLinksSearchBoxJsonLd } from "next-seo";
 
@@ -65,35 +64,6 @@ const MapOfIranSection = () => {
 
   return (
     <>
-      <OrganizationJsonLd
-        name="بازار نخل"
-        type="Organization"
-        url="http://nakhll.com"
-        logo="https://nakhll.com//assets/images/logo/logo-base.svg"
-        contactPoint={[
-          {
-            type: "ContactPoint",
-            telephone: "03491001230",
-            contactType: "customer service",
-            areaServed: "IR",
-            availableLanguage: ["Persian"],
-          },
-        ]}
-        sameAs={[
-          "https://www.instagram.com/nakhll_com/",
-          "https://twitter.com/Nakhll",
-        ]}
-      />
-      <SiteLinksSearchBoxJsonLd
-        url="https://nakhll.com/"
-        potentialActions={[
-          {
-            target: "https://nakhll.com/search?keyword=",
-            queryInput: "search_term_string",
-          },
-        ]}
-        type="WebSite"
-      />
       <div className="flex flex-col">
         <div className="flex items-center lg:justify-start">
           <p className="lg:text-4xl text-2xl font-bold text-primary-10">
